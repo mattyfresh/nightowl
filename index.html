@@ -72,7 +72,7 @@
 					</li>
 					<!-- third slide -->
 					<li class="slides">
-						<h1>This Box slider works well enough now for the circles...</h1>
+						<h1>This Box slider works well enough now for the circles..</h1>
 						<!-- underline will go here -->
 						<p>Cool!  Fried chicken for dinner.</p>
 
@@ -92,7 +92,7 @@
 			<div id="circles-wrapper">
 				<ul>
 					
-					<li><div id="circle-one" class="circles"></div></li>
+					<li><div id="circle-one" class="circles selected"></div></li>
 					 
 					<li><div id="circle-two" class="circles"></div></li>
 					
@@ -143,7 +143,7 @@
 
 			</ul>
 
-			<h3>All Flavor Stories <i class="fa fa-arrow-right"></i></h3>
+			<h3>ALL FLAVOR STORIES <i class="fa fa-arrow-right"></i></h3>
 
 		</div>
 
@@ -183,25 +183,41 @@
 
 			//function  to handle nav circles
 
-		function circleChange() {
+		function leftCircleChange() {
 
 				if($('#slider-ul').css('margin-left') == "0px") {
 
 				$('.circles').removeClass('selected');
-				$($circles[0]).addClass('selected');
+				$($circles[1]).addClass('selected');
 			} else if ($('#slider-ul').css('margin-left') == "-800px") {
 
 				$('.circles').removeClass('selected');
-				$($circles[1]).addClass('selected');
+				$($circles[2]).addClass('selected');
 
 			} else {
 				$('.circles').removeClass('selected');
+				$($circles[0]).addClass('selected');
+			}
+		}
+		function rightCircleChange() {
+
+				if($('#slider-ul').css('margin-left') == "0px") {
+
+				$('.circles').removeClass('selected');
 				$($circles[2]).addClass('selected');
+			} else if ($('#slider-ul').css('margin-left') == "-800px") {
+
+				$('.circles').removeClass('selected');
+				$($circles[0]).addClass('selected');
+
+			} else {
+				$('.circles').removeClass('selected');
+				$($circles[1]).addClass('selected');
 			}
 		}
 		//initialize styling with function
 
-		circleChange();
+		
 
 
 			//first give selected class styling to first circle
@@ -215,13 +231,13 @@
 						
 						$('#slider-ul').animate({'margin-left':'-=800px'}, 500);
 
-						circleChange();
+						leftCircleChange();
 						
 					} else {
 						//if at the last slide, go back to the first
 						$('#slider-ul').animate({'margin-left':'0px'}, 500);
 
-						circleChange();
+						leftCircleChange();
 						
 					}
 				}, 500);
@@ -241,12 +257,12 @@
 				
 					$('#slider-ul').animate({'margin-left':'+=800px'}, 500);
 
-					circleChange();
+					rightCircleChange();
 					
 				} else {
 					$('#slider-ul').animate({'margin-left':'-1600px'}, 500);
 
-					circleChange();
+					rightCircleChange();
 					
 				}
 
