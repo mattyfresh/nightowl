@@ -1,0 +1,296 @@
+<html>
+<head>
+	<title>Limes</title>
+	<!-- META DATA -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Limes">
+	<meta name="author" content="Made it.">
+	<!-- JS -->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<!-- FONTS -->
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>	
+<link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
+<body>
+
+
+		<div id="top">
+			<div id="nav">
+				<p id="logo"><span>e</span>-sense</p>
+				<ul id="nav-ul">
+					<li>About us</li>
+					<li>Expertise</li>
+					<li>Contact Us</li>
+					<li>Socialize</li>
+				</ul>
+
+				<ul id="social-icons-ul">
+					<li><i class="fa fa-facebook fa-lg"></i></li>
+					<li><i class="fa fa-twitter fa-lg"></i></li>
+
+				</ul>
+			</div>
+
+
+			
+			<div id="moveLeft"><i class="fa fa-angle-left fa-5"></i></div>
+
+			<div id="slider-container">
+
+				
+
+
+
+				<ul id="slider-ul">
+					<!-- first slide -->
+					<li id="first-slide" class="slides">
+						<h1>THE ART &amp; SCIENCE OF YOUR SENSES</h1>
+						<!-- underline will go here -->
+						<p>Something about limes and other awesome things like boogie boards and beer</p>
+
+						<div id="products">
+
+							<h3>VIEW ALL PRODUCTS <i class="fa fa-arrow-right"></i></h3>
+
+						</div>
+					</li>
+					<!-- second slide -->
+					<li class="slides">
+						<h1>Some Other things about Science and Stuff</h1>
+						<!-- underline will go here -->
+						<p>Neil Young, thank you for your being a pleasanton.</p>
+
+						<div id="products">
+
+							<h3>VIEW ALL PRODUCTS <i class="fa fa-arrow-right"></i></h3>
+
+						</div>
+					</li>
+					<!-- third slide -->
+					<li class="slides">
+						<h1>This Box slider works well enough now for the circles...</h1>
+						<!-- underline will go here -->
+						<p>Cool!  Fried chicken for dinner.</p>
+
+						<div id="products">
+
+							<h3>VIEW ALL PRODUCTS <i class="fa fa-arrow-right"></i></h3>
+
+						</div>
+					</li>
+			
+				</ul>
+
+			</div>
+
+			<div id="moveRight"><i class="fa fa-angle-right"></i></div>
+
+			<div id="circles-wrapper">
+				<ul>
+					
+					<li><div id="circle-one" class="circles"></div></li>
+					 
+					<li><div id="circle-two" class="circles"></div></li>
+					
+					<li><div id="circle-three" class="circles"></div></li>
+					
+				</ul>
+			</div>
+		</div>
+
+
+		<div id="main">
+
+			<h1>Recent Flavor Stories</h1>
+			<ul id="flavors-ul">
+
+				<li>
+					<img src="images/tamarind.png">
+					<h4>Man, I <i class="fa fa-heart"></i> tamarind!</h4>
+					<p>Never heard of this spice before.  Must be something NPR did a special on last season.</p>
+
+				</li>
+				<li class="line-li">
+
+					<img class="line" src="images/line.png">
+
+
+				</li>
+
+				<li>
+					<img src="images/mangosteen.png">
+					<h4>The mighty mangosteen</h4>
+					<p>This is definitely made up.  100% positive that this is probably 90% real.</p>
+
+				</li>
+				<li class="line-li">
+
+					<img class="line" src="images/line.png">
+
+
+				</li>
+				<li>
+					<img src="images/epsom.png">
+					<h4>Ipsum Salt</h4>
+					<p>Latin Salt?  This is some more stuff about this thing here in this bowl.</p>
+
+				</li>
+
+
+			</ul>
+
+			<h3>All Flavor Stories <i class="fa fa-arrow-right"></i></h3>
+
+		</div>
+
+		<footer>
+
+			<div id="bottom-nav">
+
+				<ul id="bottom-ul">
+
+					<li><span>eSense &copy; 2014 all rights reserved</span></li>
+					<li>ABOUT</li>
+					<li>FLAVORS</li>
+					<li>FRAGRANCES</li>
+					<li>STORES</li>
+					<li>INGREDIENTS</li>
+					<li>CONTACTS</li>
+					<li>PRIVACY</li>
+					<li>LINKS</li>
+
+				</ul>
+
+			</div>
+
+
+		</footer>
+
+		<script type="text/javascript">
+		$(document).ready(init);
+
+		
+		//All three of the circles
+
+		var $circles = $('#circles-wrapper').find('.circles');
+
+
+		function init() {
+
+			//function  to handle nav circles
+
+		function circleChange() {
+
+				if($('#slider-ul').css('margin-left') == "0px") {
+
+				$('.circles').removeClass('selected');
+				$($circles[0]).addClass('selected');
+			} else if ($('#slider-ul').css('margin-left') == "-800px") {
+
+				$('.circles').removeClass('selected');
+				$($circles[1]).addClass('selected');
+
+			} else {
+				$('.circles').removeClass('selected');
+				$($circles[2]).addClass('selected');
+			}
+		}
+		//initialize styling with function
+
+		circleChange();
+
+
+			//first give selected class styling to first circle
+
+			$('#moveLeft').on('click', function() {
+
+				//wait .5s to let animation finish, animate only when you're not at the last li in the slider
+
+				setTimeout(function() {
+					if ($('#slider-ul').css('margin-left') != "-1600px") {
+						
+						$('#slider-ul').animate({'margin-left':'-=800px'}, 500);
+
+						circleChange();
+						
+					} else {
+						//if at the last slide, go back to the first
+						$('#slider-ul').animate({'margin-left':'0px'}, 500);
+
+						circleChange();
+						
+					}
+				}, 500);
+
+				
+
+
+			});
+
+
+			$('#moveRight').on('click', function() {
+
+
+				setTimeout(function() {
+
+				if ($('#slider-ul').css('margin-left') != "0px") {
+				
+					$('#slider-ul').animate({'margin-left':'+=800px'}, 500);
+
+					circleChange();
+					
+				} else {
+					$('#slider-ul').animate({'margin-left':'-1600px'}, 500);
+
+					circleChange();
+					
+				}
+
+
+				}, 500);
+
+				
+
+			});
+
+			//set up the clickable circles to animate to appropriate slide
+
+			$('#circle-one').on('click', function() {
+
+				$('#slider-ul').animate({'margin-left':'0px'}, 500);
+
+				$('.circles').removeClass('selected');
+				$(this).addClass('selected');
+
+			});
+			
+			$('#circle-two').on('click', function() {
+
+				$('#slider-ul').animate({'margin-left':'-800px'}, 500);
+				$('.circles').removeClass('selected');
+				$(this).addClass('selected');
+
+
+			});
+			$('#circle-three').on('click', function() {
+
+				$('#slider-ul').animate({'margin-left':'-1600px'}, 500);
+				$('.circles').removeClass('selected');
+				$(this).addClass('selected');
+
+
+			});
+	}
+
+		
+
+
+
+		</script>
+
+</body>
+</html>
