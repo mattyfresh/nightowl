@@ -1,6 +1,7 @@
  body, html, ul, li{
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
 
 #logo {
 	position: relative;
+	top: -10px;
 	width: 16%;
 	display: inline-block !important;
 	/*color: red;*/
@@ -56,6 +58,7 @@ body {
 	display: inline-block;
 	width: 20%;
 	text-align: right;
+	padding: 10px;
 }
 #social-icons-ul li {
 	display: inline-block;
@@ -73,6 +76,9 @@ body {
 	color: rgba(255,255,255,.3);
 	/*text-shadow: 2px 0 1px rgba(0,0,0,.3);*/
 }
+.fa-lg {
+	line-height: 1.3333em !important;
+} 
 #moveLeft {
 	position: relative;
 	top: 200px;
