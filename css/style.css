@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 }
+
 body {
 	position: relative;
 	font-family: 'Lato', sans-serif !important;
@@ -24,6 +25,9 @@ body {
 	margin: 0 auto 100px;
 	left: 60px;
 	/*text-align: center;*/
+}
+#nav a {
+	color: white;
 }
 
 #logo {
@@ -99,7 +103,16 @@ body {
 	padding: 40px 0;
 	left: -80px;
 }
-#slider-container ul {
+#slider-container a {
+	color: white;
+	text-decoration: none;
+}
+.slides h1, .slides p{
+	width: 50%;
+	margin: 0 auto;
+}
+
+#slider-container #slider-ul {
 	position: relative;
 	width: 2400px;
 	height: 100%;
@@ -107,7 +120,7 @@ body {
 	left: 20px;
 	top: 20px;
 }
-#slider-container li {
+#slider-container #slider-ul li {
 	float: left;
 	display: inline-block;
 	height: 100%;
@@ -120,10 +133,12 @@ body {
 	display: block;
 	width: 50px;
 	height: 2px;
-	margin: 20px auto;
+	margin: 34px auto;
 	background-color: white;
 }
 
+
+/*Circles!*/
 
 
 #circles-wrapper {
@@ -160,6 +175,8 @@ body {
 
 
 /*end slider css*/
+
+
 #products {
 	width: 100%;
 	text-align: center;
@@ -207,6 +224,10 @@ body {
 	height: 300px;
 	margin: auto 0;
 }
+#main a {
+	color: black;
+	text-decoration: none;
+}
 #main h3 {
 	width: 16%;
 	margin: 40px auto 120px;
@@ -223,6 +244,9 @@ footer #bottom-nav #bottom-ul {
 	color: white;
 	padding: 16px 0;
 	font-size: .7em;
+}
+footer #bottom-nav #bottom-ul a {
+	color: white;
 }
 footer #bottom-nav #bottom-ul li {
 	display: inline-block;
