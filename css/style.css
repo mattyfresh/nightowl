@@ -13,11 +13,9 @@ body {
 	position: relative;
 	left: 0;
 	width: 100%;
-	/*height: 800px;*/
 	background: url(../images/marg.jpg) black;
 	background-size: cover;
 	color: white;
-	/*text-shadow: 1px 1px 1px black;*/
 	padding: 20px 0;
 }
 
@@ -25,7 +23,6 @@ body {
 	position: relative;
 	margin: 0 auto 100px;
 	left: 60px;
-	/*text-align: center;*/
 }
 #nav a {
 	color: white;
@@ -36,7 +33,6 @@ body {
 	top: -10px;
 	width: 16%;
 	display: inline-block !important;
-	/*color: red;*/
 	font-size: 2em;
 	margin: 0 10px;
 }
@@ -74,7 +70,6 @@ body {
 	font-size: 100px !important;
 	z-index: 100;
 	color: rgba(255,255,255,.3);
-	/*text-shadow: 2px 0 1px rgba(0,0,0,.3);*/
 }
 .fa-lg {
 	line-height: 1.3333em !important;
@@ -155,7 +150,7 @@ body {
 }
 #circles-wrapper ul {
 	position: relative;
-	left: 50px;
+	left: 40px;
 }
 #circles-wrapper ul li {
 	display: inline-block;
