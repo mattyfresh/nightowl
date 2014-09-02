@@ -15,15 +15,15 @@ $(document).ready(init);
 				if($('#slider-ul').css('margin-left') == "0px") {
 
 				$('.circles').removeClass('selected');
-				$($circles[1]).addClass('selected');
+				$($circles[2]).addClass('selected');
 			} else if ($('#slider-ul').css('margin-left') == "-800px") {
 
 				$('.circles').removeClass('selected');
-				$($circles[2]).addClass('selected');
+				$($circles[0]).addClass('selected');
 
 			} else {
 				$('.circles').removeClass('selected');
-				$($circles[0]).addClass('selected');
+				$($circles[1]).addClass('selected');
 			}
 		}
 		function rightCircleChange() {
@@ -31,15 +31,15 @@ $(document).ready(init);
 				if($('#slider-ul').css('margin-left') == "0px") {
 
 				$('.circles').removeClass('selected');
-				$($circles[2]).addClass('selected');
+				$($circles[1]).addClass('selected');
 			} else if ($('#slider-ul').css('margin-left') == "-800px") {
 
 				$('.circles').removeClass('selected');
-				$($circles[0]).addClass('selected');
+				$($circles[2]).addClass('selected');
 
 			} else {
 				$('.circles').removeClass('selected');
-				$($circles[1]).addClass('selected');
+				$($circles[0]).addClass('selected');
 			}
 		}
 
@@ -51,15 +51,15 @@ $(document).ready(init);
 				//wait .5s to let animation finish, animate only when you're not at the last li in the slider
 
 				setTimeout(function() {
-					if ($('#slider-ul').css('margin-left') != "-1600px") {
+					if ($('#slider-ul').css('margin-left') != '0px') {
 						
-						$('#slider-ul').animate({'margin-left':'-=800px'}, 500);
+						$('#slider-ul').animate({'margin-left':'+=800px'}, 500);
 
 						leftCircleChange();
 						
 					} else {
 						//if at the last slide, go back to the first
-						$('#slider-ul').animate({'margin-left':'0px'}, 500);
+						$('#slider-ul').animate({'margin-left':'-1600px'}, 500);
 
 						leftCircleChange();
 						
@@ -77,14 +77,14 @@ $(document).ready(init);
 
 				setTimeout(function() {
 
-				if ($('#slider-ul').css('margin-left') != "0px") {
+				if ($('#slider-ul').css('margin-left') != "-1600px") {
 				
-					$('#slider-ul').animate({'margin-left':'+=800px'}, 500);
+					$('#slider-ul').animate({'margin-left':'-=800px'}, 500);
 
 					rightCircleChange();
 					
 				} else {
-					$('#slider-ul').animate({'margin-left':'-1600px'}, 500);
+					$('#slider-ul').animate({'margin-left':'0px'}, 500);
 
 					rightCircleChange();
 					
